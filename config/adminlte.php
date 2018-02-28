@@ -32,7 +32,7 @@ return [
 
     'logo' => '<b>Sistema</b>Saldo',
 
-    'logo_mini' => '<b>Sistema</b>Saldo',
+    'logo_mini' => '<b>S</b>S',
 
     /*
     |--------------------------------------------------------------------------
@@ -113,6 +113,22 @@ return [
             'text'        => 'Home',
             'url'         => 'admin',
             'icon'        => 'home',
+        ],
+        [
+            'text'        => 'Financeiro',
+            'icon'        => 'money',
+            'submenu' => [
+                [
+                    'text'  => 'Saldo',
+                    'url'   => 'admin/balance',
+                    'icon'  => 'credit-card-alt'
+                ],
+                [
+                    'text'  => 'Histórico',
+                    'url'   => 'admin/historic',
+                    'icon'  => 'history' 
+                ]
+            ]
         ]
     ],
 
