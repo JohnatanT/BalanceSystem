@@ -32,7 +32,7 @@ return [
 
     'logo' => '<b>Sistema</b>Saldo',
 
-    'logo_mini' => '<b>S</b>S',
+    'logo_mini' => '<i class="fa fa-balance-scale"></i>',
 
     /*
     |--------------------------------------------------------------------------
