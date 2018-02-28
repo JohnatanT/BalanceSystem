@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Sistema de Saldo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -72,22 +72,64 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">Cadastro</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Sistema de Saldo
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="msg">
+                    <h4>Porque utilizar nosso sistema de Saldo?</h4>
+                </div>
+                <div class="row conteudo">
+                    <div class="col-md-12">
+                        <div class="bloco">
+                            <div class="col-md-6">
+                                <img src="" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="txt">
+                                    <h2>Confiança</h2>
+                                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, 
+                                    e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos 
+                                    e os embaralhou para fazer um livro de modelos de tipos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="bloco">
+                            <div class="col-md-6">
+                                <img src="" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="txt">
+                                    <h2>Integridade</h2>
+                                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, 
+                                    e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos 
+                                    e os embaralhou para fazer um livro de modelos de tipos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="bloco">
+                            <div class="col-md-6">
+                                <img src="" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="txt">
+                                    <h2>Agilidade</h2>
+                                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, 
+                                    e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos 
+                                    e os embaralhou para fazer um livro de modelos de tipos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
