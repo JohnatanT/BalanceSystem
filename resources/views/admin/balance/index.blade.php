@@ -20,7 +20,7 @@
         <div class="box-body">
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>R$ 150</h3>
+                    <h3>R$ {{ number_format($amount, 2, '.', '') }}</h3>
                     <p>Saldo</p>
                 </div>
                 <div class="icon">
