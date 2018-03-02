@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Balance;
 
 class BalanceController extends Controller
 {
+    //Método que retorna a view de saldo com o amount da tabela
     public function index()
     {
         //Retorna o balance do usuario logado
@@ -16,14 +18,18 @@ class BalanceController extends Controller
         return view("admin.balance.index", compact('amount'));      
     }
 
+    //Metodo que retorna a view de deposito
     public function deposit()
     {
         return view('admin.balance.deposit');
     }
 
+    //Metodo que passa o valor para a função depositar da Model Balance
     public function depositStore(Request $request)
     {
-        $dados = $request->all();
+        $balance = auth()->user()->balance()->firstOrCreate([]);
+        $balance->deposit($request->value);
+        return $this->index();
     }
 
 
