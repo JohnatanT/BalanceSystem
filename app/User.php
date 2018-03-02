@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Balance;
+use App\Models\Historic;
 
 class User extends Authenticatable
 {
@@ -28,10 +29,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //Metodo que faz o relacionamento entre o usuario e o saldo
     public function balance()
     {
-        //Faz o relacionamento 1 para 1 com a Model Balance
+        //Faz o relacionamento 1 para 1 
         return $this->hasOne(Balance::class);
+    }
+
+    //Metodo que faz o relacionamento entre usuario e histórico
+    public function historics()
+    {
+        //Relacionamento de 1 para Muitos
+        return $this->hasMany(Historic::class);
     }
 
 
