@@ -49,6 +49,51 @@ class Balance extends Model
 
     }
 
+    //Metodo que irá sacar
+    public function withdrawn(float $value) : Array
+    {
+        //Verifica se há saldo suficiente para retirar
+        if($this->amount < $value)
+            return [
+                'success' => false,
+                'message' => 'Saldo Insuficiete'
+            ];
+
+        DB::beginTransaction();
+
+        //Valor antes do saque
+        $totalBefore = $this->amount ? $this->amount : 0;
+
+        //Faz o saque
+        $this->amount -= number_format($value, 2, '.', '');
+        $retirada = $this->save();
+
+        //Pega o usuario logado e cria um historico
+        $historic = auth()->user()->historics()->create([
+            'type'          => 'O',
+            'amount'        => $value,
+            'total_before'  => $totalBefore,
+            'total_after'   => $this->amount,
+            'date'          => date('Ymd'),
+        ]);
+
+        if($retirada && $historic){
+            DB::commit();
+                return [
+                    'success' => true,
+                    'message' => 'Sucesso ao sacar'
+                ];
+        }else{
+            DB::rollback();
+                return [
+                    'success' => false,
+                    'message' => 'Erro ao sacar'
+                ];
+        }
+        
+
+
+    }
 
 
 }
