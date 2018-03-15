@@ -51,7 +51,7 @@ class BalanceController extends Controller
     public function withdrawnStore(MoneyValidationFormRequest $request)
     {
         $balance = auth()->user()->balance()->firstOrCreate([]);
-        $response = $balance->deposit($request->value);
+        $response = $balance->withdrawn($request->value);
 
         if($response['success'])
             return redirect()
